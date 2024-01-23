@@ -102,8 +102,8 @@ at com.crio.qcalc.QcalcApplication.main(QcalcApplication.java:7)
 - Error message
 - Actual line number where the error occurred.
 Quite often, looking up portions of the error message on Google will narrow down your search significantly.
-[Exceptions in Java](https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html)
-[Reading java stack trace](https://www.twilio.com/blog/how-to-read-and-understand-a-java-stacktrace)
+[Exceptions in Java](https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html) || 
+[Reading java stack trace](https://www.twilio.com/blog/how-to-read-and-understand-a-java-stacktrace) || 
 [what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors](https://stackoverflow.com/questions/3988788/what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors)
 
 4. Modified subtract() also. 
@@ -112,10 +112,10 @@ Quite often, looking up portions of the error message on Google will narrow down
 6. Passed all test cases!
 ![Local Image](./images/phase3_3.png)
 
-[types-of-exception-in-java-with-examples](https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/)
-[Executable (JUnit 5.0.3 API)](https://junit.org/junit5/docs/5.0.3/api/org/junit/jupiter/api/function/Executable.html)
-[Java throws keyword](https://www.javatpoint.com/throws-keyword-and-difference-between-throw-and-throws)
-[throwable-class-in-java-with-examples/](https://www.geeksforgeeks.org/throwable-class-in-java-with-examples/)
+[types-of-exception-in-java-with-examples](https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/) || 
+[Executable (JUnit 5.0.3 API)](https://junit.org/junit5/docs/5.0.3/api/org/junit/jupiter/api/function/Executable.html) || 
+[Java throws keyword](https://www.javatpoint.com/throws-keyword-and-difference-between-throw-and-throws) || 
+[throwable-class-in-java-with-examples/](https://www.geeksforgeeks.org/throwable-class-in-java-with-examples/) 
 
 
 
