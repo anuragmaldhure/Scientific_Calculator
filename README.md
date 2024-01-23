@@ -158,5 +158,7 @@ public final void divide(double num1, double num2){
 
 ![Local Image](./images/phase5_1.png)
 
+NOTE - I have done commits phasewise so if I or anyone refer to this repo in future, he can understand changes in code by reading readme simultaneously :)
+
 ### My Core Java Practice Assignments (My CDAC assignments)
 [Click here](https://github.com/D3-80316-Anurag-Maldhure/JAVA_Assignments)
