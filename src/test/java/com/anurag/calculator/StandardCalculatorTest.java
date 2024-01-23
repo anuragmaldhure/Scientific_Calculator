@@ -87,6 +87,29 @@ public class StandardCalculatorTest {
         double actualResult = standardCalculator.getResult();
         Assertions.assertEquals(6.0, actualResult);
     }
+
+    @Test
+    @DisplayName("Test Multiplication Overflow of Two Doubles") // failed
+    void testMultiplicationOverflowForDoubles(){
+        //Assert
+        Assertions.assertThrows(ArithmeticException.class,new Executable(){
+            @Override
+            public void execute() throws Throwable{
+                standardCalculator.multiply(Double.MAX_VALUE,Double.MAX_VALUE);
+            }
+        });
+    }
+    @Test
+    @DisplayName("Test Multiplication Overflow of Two Doubles in which One is Positive and Other is Negative")
+    void testMultiplicationOverflowForDoublesOnePosOtherNeg(){
+        //Assert
+        Assertions.assertThrows(ArithmeticException.class,new Executable(){
+            @Override
+            public void execute() throws Throwable{
+                standardCalculator.multiply(-Double.MAX_VALUE,Double.MAX_VALUE);
+            }
+        });
+    }
 }
 
 

@@ -133,7 +133,29 @@ Quite often, looking up portions of the error message on Google will narrow down
 6. All unit tests still work fine!
 ![Local Image](./images/phase3_4.png)
 
+## Phase 5
+### Implementing Logical Functionality by extending standard calculator
+1. Wrote new class LogicCalculator.java to perform logical operations : AND &, OR |, XOR ^, NOT ~
+2. Wrote corresponding test cases in LogicCalculatorTest.java 
+* Used ARRANGE-ACT-ASSERT strategy while writing test case 
+3. Modified : public final void multiply(double num1, double num2) to cancel out the Double Overflow by throwing exceptions for three cases
+- Max Value
+- Positive Infinity
+- Negative Infinity
+4. Also wrote corresponing test case : testMultiplicationOverflowForDoubles()
+5. In StandardCalculator.java, a bug was found for divide operation. Divide by zero is not possible so replaced the logic
+```java
+public final void divide(double num1, double num2){
+        if(num2 == 0.0){
+            throw new ArithmeticException("Divide By Zero");
+        }
+        result = num1 / num2;
+    }
+```
+6. Wrote the unit test to verify the exception is thrown for Divide by Zero : testMultiplicationOverflowForDoublesOnePosOtherNeg()
+7. All unit tests works! 21 Test cases PASS! Abhi maza aaya na bidu!
 
+![Local Image](./images/phase5_1.png)
 
 ### My Core Java Practice Assignments (My CDAC assignments)
 [Click here](https://github.com/D3-80316-Anurag-Maldhure/JAVA_Assignments)
