@@ -104,8 +104,7 @@ at com.crio.qcalc.QcalcApplication.main(QcalcApplication.java:7)
 Quite often, looking up portions of the error message on Google will narrow down your search significantly.
 [Exceptions in Java](https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html)
 [Reading java stack trace](https://www.twilio.com/blog/how-to-read-and-understand-a-java-stacktrace)
-[what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors](https://stackoverflow.com/questions/3988788/
-what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors)
+[what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors](https://stackoverflow.com/questions/3988788/what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors)
 
 4. Modified subtract() also. 
 5. Made chnages in StandardCalculatorTest.java to add new test cases : testAdditionOverflowForDoubles() and testSubtractionOverflowForDoubles(). Each of these methods tests the overflow behaviour of the methods modified.
