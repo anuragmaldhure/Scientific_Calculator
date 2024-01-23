@@ -6,6 +6,7 @@ To demonstrate Core Java Concepts - More Comprehensive Approach
 * Project Implementation :
 * [Phase 1](#phase-1)
 * [Phase 2](#phase-2)
+* [Phase 3](#phase-3)
 
 Also Checkout my other Core Java based Projects :
 * [URL shortener - Basic Approach](https://github.com/anuragmaldhure/URL_Shortener)
@@ -62,8 +63,60 @@ Also Checkout my other Core Java based Projects :
 
 ![Local Image](./images/phase2_1.png)
 
+## Phase 3
+### Debugging and handling Exceptions
+1. What if we try to do something like this? 
+![Local Image](./images/phase3_1.png)
+Currently, the implementation silently overflows and the output we get is Infinity. Strange!
+These should not be allowed to happen. If an operation causes an overflow to occur, one possible thing we can do is to throw an "exception" in the program.
+[Overflow and Underflow in Java](https://www.baeldung.com/java-overflow-underflow)
 
+* What are Exceptions? Exceptions are objects that describe abnormal flows of execution in the program. These are objects and can be "thrown". A program can then decide how to handle them or ignore them.
 
+2. Modify add () : 
+```java 
+public void add(double num1, double num2){
+    double result = num1 + num2;
+    if((result == Double.MAX_VALUE) || (result == Double.POSITIVE_INFINITY)){
+        throw new ArithmeticException("Double overflow");
+    }
+    this.result = result;
+}
+```
+- Addition operation is performed normally and assigned to a newly created double variable.
+- Conditional logic is applied based on our previous knowledge of how overflow works for double data types.
+- The conditional block contains the statement which creates a new Object (of type ArithmeticException) which can be thrown to interrupt the normal execution of the program and handle it gracefully.
+- If the operation is performed normally then the calculated result will be stored in the instance result variable, else an exception will be thrown.
+Note that the flow is being interrupted here by throwing an exception. The thrown exception is not yet handled gracefully in the method that invokes the add() operation.
+
+3. Now calc.add(Double.MAX_VALUE, 1.0) or calc.add(Double.MAX_VALUE, Double.MAX_VALUE) throws an error : 
+![Local Image](./images/phase3_2.png)
+Error stacktrace:
+```java
+Exception in thread "main" java.lang.ArithmeticException: Double overflow   
+at com.crio.qcalc.StandardCalculator.add(StandardCalculator.java:39)
+at com.crio.qcalc.QcalcApplication.main(QcalcApplication.java:7)  
+```
+* A stack trace provides information about the sequence of calls made in the program execution. Since exceptions are abnormal flows of program execution, this is useful in debugging. While stack traces can be intimidating when you first see them, reading through them might help get you halfway through the debugging of your code. The top-most line in a stack trace gives quite a lot of information to start your debugging process:
+- Exception name
+- Error message
+- Actual line number where the error occurred.
+Quite often, looking up portions of the error message on Google will narrow down your search significantly.
+[Exceptions in Java](https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html)
+[Reading java stack trace](https://www.twilio.com/blog/how-to-read-and-understand-a-java-stacktrace)
+[what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors](https://stackoverflow.com/questions/3988788/
+what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors)
+
+4. Modified subtract() also. 
+5. Made chnages in StandardCalculatorTest.java to add new test cases : testAdditionOverflowForDoubles() and testSubtractionOverflowForDoubles(). Each of these methods tests the overflow behaviour of the methods modified.
+* A static assertThrows method of Assertions class currently accepts two parameters. First parameter indicates the type of exception the method being tested should throw. Second parameter is an Executable object which has an overridden execute() method wrapping the method being tested. These tests will PASS if and only if the exception is thrown for some scenarios and matches the Exception type specified in the first parameter.
+6. Passed all test cases!
+![Local Image](./images/phase3_3.png)
+
+[types-of-exception-in-java-with-examples](https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/)
+[Executable (JUnit 5.0.3 API)](https://junit.org/junit5/docs/5.0.3/api/org/junit/jupiter/api/function/Executable.html)
+[Java throws keyword](https://www.javatpoint.com/throws-keyword-and-difference-between-throw-and-throws)
+[throwable-class-in-java-with-examples/](https://www.geeksforgeeks.org/throwable-class-in-java-with-examples/)
 
 
 
