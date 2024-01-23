@@ -7,6 +7,7 @@ To demonstrate Core Java Concepts - More Comprehensive Approach
 * [Phase 1](#phase-1)
 * [Phase 2](#phase-2)
 * [Phase 3](#phase-3)
+* [Phase 4](#phase-4)
 
 Also Checkout my other Core Java based Projects :
 * [URL shortener - Basic Approach](https://github.com/anuragmaldhure/URL_Shortener)
@@ -102,7 +103,7 @@ at com.crio.qcalc.QcalcApplication.main(QcalcApplication.java:7)
 - Error message
 - Actual line number where the error occurred.
 Quite often, looking up portions of the error message on Google will narrow down your search significantly.
-[Exceptions in Java](https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html) || 
+[Exceptions in Java](https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html) ||
 [Reading java stack trace](https://www.twilio.com/blog/how-to-read-and-understand-a-java-stacktrace) || 
 [what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors](https://stackoverflow.com/questions/3988788/what-is-a-stack-trace-and-how-can-i-use-it-to-debug-my-application-errors)
 
@@ -112,11 +113,25 @@ Quite often, looking up portions of the error message on Google will narrow down
 6. Passed all test cases!
 ![Local Image](./images/phase3_3.png)
 
-[types-of-exception-in-java-with-examples](https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/) || 
-[Executable (JUnit 5.0.3 API)](https://junit.org/junit5/docs/5.0.3/api/org/junit/jupiter/api/function/Executable.html) || 
-[Java throws keyword](https://www.javatpoint.com/throws-keyword-and-difference-between-throw-and-throws) || 
+[types-of-exception-in-java-with-examples](https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/) ||
+[Executable (JUnit 5.0.3 API)](https://junit.org/junit5/docs/5.0.3/api/org/junit/jupiter/api/function/Executable.html) ||
+[Java throws keyword](https://www.javatpoint.com/throws-keyword-and-difference-between-throw-and-throws) ||
 [throwable-class-in-java-with-examples/](https://www.geeksforgeeks.org/throwable-class-in-java-with-examples/) 
 
+
+## Phase 4
+### Implementing Scientific Functionality by extending standard calculator
+1. List of new operations to implement : Sine, Cosine, Tan, Log, Square Root, Cube Root, Square. Created a new ScientificCalculator.java class that inherits all the methods in the StandardCalculator.java class to get the advantage of re-use but not the burden that comes with modifying existing classes.
+- square() method is using the implementation of the existing multiply() method which is inherited from the base class.
+- there is a getVersion() method which has a keyword static and a return type of void. It prints the current version of the ScientificCalculator class.
+2. Made access specifier of result field of StandardCalculator.java as protected instead of private
+3. Wrote a method printResult() in StandardCalculator.java and overridden it in ScientificCalculator.java
+* @Override annotation simply indicates that the superclass method is being overridden by an implementation of the child class. This annotation is not compulsory but makes it easy to identify that it’s an overridden method. Anytime we visit the code, we will know its overridden.
+4. Make add() and other arithmetic methods final as well, so it can’t be overridden.
+* The main intention of making a method final is that the functionality of the method should not be changed by anyone.
+5. Wrote test cases for newly added methods in ScientificCalculator.java into ScientificCalculatorTest.java
+6. All unit tests still work fine!
+![Local Image](./images/phase3_4.png)
 
 
 
